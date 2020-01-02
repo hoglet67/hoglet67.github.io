@@ -1,1 +1,68 @@
-<!doctypehtml><html lang=en-us><head><meta charset=utf-8><title>Emscripten-Generated Code</title><style>body{margin:0;background-color:#000}.game{position:absolute;top:0;left:0;margin:0;border:0;width:100%;height:100%;overflow:hidden;display:block;image-rendering:optimizeSpeed;image-rendering:-moz-crisp-edges;image-rendering:-o-crisp-edges;image-rendering:-webkit-optimize-contrast;image-rendering:optimize-contrast;image-rendering:crisp-edges;image-rendering:pixelated;-ms-interpolation-mode:nearest-neighbor}</style></head><body><canvas class=game id=canvas oncontextmenu=event.preventDefault()></canvas><script>var Module={preRun:[],postRun:[],print:function(n){n=Array.prototype.slice.call(arguments).join(" "),console.log(n)},printErr:function(n){n=Array.prototype.slice.call(arguments).join(" "),console.error(n)},canvas:function(){var n=document.getElementById("canvas");return n.addEventListener("webglcontextlost",function(n){alert("FIXME: WebGL context lost, please reload the page"),n.preventDefault()},!1),n}(),setStatus:function(n){console.log("status: "+n)},monitorRunDependencies:function(n){console.log("monitor run deps: "+n)}};window.onerror=function(){console.log("onerror: "+event)}</script><script src=atom-ui-setup.js></script><script src=atom-ui.js></script></body></html>
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Emscripten-Generated Code</title>
+    <style>
+        body { margin: 0; background-color: black }
+        .game {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: block;
+            image-rendering: optimizeSpeed;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -o-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+    </style>
+  </head>
+  <body>
+    <div style='color:green;font-size:xx-large;font-family:monospace'>Loading emulator: please wait ...</div>
+    <div id='loading' style='color:green;font-size:xx-large;font-family:monospace'></div>
+    <canvas class="game" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <script type='text/javascript'>
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+            return function(text) {
+                text = Array.prototype.slice.call(arguments).join(' ');
+                console.log(text);
+            };
+        })(),
+        printErr: function(text) {
+            text = Array.prototype.slice.call(arguments).join(' ');
+            console.error(text);
+        },
+        canvas: (function() {
+            var canvas = document.getElementById('canvas');
+            canvas.addEventListener("webglcontextlost", function(e) { alert('FIXME: WebGL context lost, please reload the page'); e.preventDefault(); }, false);
+            return canvas;
+        })(),
+        setStatus: function(text) {
+            var loading = document.getElementById('loading');
+            loading.innerHTML = text;
+            console.log("status: " + text);
+        },
+        monitorRunDependencies: function(left) {
+            /* console.log("monitor run deps: " + left); */
+        }
+      };
+      window.onerror = function() {
+        console.log("onerror: " + event);
+      };
+    </script>
+    <script type="text/javascript" src="atom-ui-setup.js"></script>
+    <script type="text/javascript" src="atom-ui.js"></script>
+  </body>
+</html>
